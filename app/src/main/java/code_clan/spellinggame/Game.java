@@ -25,15 +25,22 @@ public class Game {
         return this.randomWord;
     }
 
-    public String game(){
-       String userWord = this.userInput.toLowerCase();
-        String randomWord = this.randomWord.toLowerCase();
-        if (userWord.equals(randomWord)){
-            return "Well done!";
+    public String checkOfInput(){
+
+            String userWord = this.userInput.toLowerCase();
+            String randomWord = this.randomWord.toLowerCase();
+
+            String result_correct = "Well done!";
+            String result_false = "Try again!";
+            if (userWord.equals(randomWord)) {
+                return result_correct;
+            } else {
+                return result_false;
+
         }
-        else {
-            return "Try again";
-        }
+
+
+
     }
 
 }
