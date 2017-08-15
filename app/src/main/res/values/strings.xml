@@ -4,4 +4,5 @@
     <string name="type_your_word_here">Type your word here</string>
     <string name="finish">Return</string>
     <string name="go_to_game">Go to game</string>
+    <string name="summary">Summary</string>
 </resources>

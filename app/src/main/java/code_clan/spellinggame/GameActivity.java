@@ -10,6 +10,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 public class GameActivity extends AppCompatActivity {
     Button gamebButton;
     Button returnButton;
@@ -20,8 +22,9 @@ public class GameActivity extends AppCompatActivity {
 
     EditText typedWord;
 
-    WordsCollection listOfWords;
+    WordsCollection wordsCollection;
 
+    ArrayList<String>arrayOfWords;
     String typeRandomWord;
     int countCorrect;
     int countIncorrect;
@@ -40,8 +43,9 @@ public class GameActivity extends AppCompatActivity {
         counterIncorrect=(TextView)findViewById(R.id.counter_incorrect);
         counterCorrect = (TextView)findViewById(R.id.counter_correct);
 
-        listOfWords = new WordsCollection();
-        this.typeRandomWord = listOfWords.randomWord();
+        wordsCollection = new WordsCollection();
+
+        this.typeRandomWord = wordsCollection.randomWord();
         randomWord.setText(this.typeRandomWord);
         counterCorrect.setText("Correctly spelled words: 0");
         counterIncorrect.setText("Incorrectly Spelled words: 0");
@@ -63,17 +67,18 @@ public class GameActivity extends AppCompatActivity {
 
     public void onButtonCLickCompare(View view) {
         String word = typedWord.getText().toString();
-        Log.d("Word : ", word);
-
 
 
         Game newGame = new Game(word, this.typeRandomWord);
         String result = newGame.checkOfInput();
         if (result.equals("Well done!")) {
-            this.typeRandomWord = listOfWords.randomWord();
+            wordsCollection.listOfWords.remove(this.typeRandomWord);
+            this.typeRandomWord = wordsCollection.randomWord();
             randomWord.setText(this.typeRandomWord);
             typedWord.setText("");
             countCorrect ++;
+
+
 
         }
         else {
