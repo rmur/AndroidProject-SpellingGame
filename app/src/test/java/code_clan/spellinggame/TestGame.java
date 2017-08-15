@@ -27,6 +27,6 @@ public class TestGame {
 
     @Test
     public void testGame(){
-        assertEquals("Well done!",game.game());
+        assertEquals("Well done!",game.checkOfInput());
     }
 }
