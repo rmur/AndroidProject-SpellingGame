@@ -17,6 +17,11 @@ public class WordsCollection {
         listOfWords.add("embarrass");
         listOfWords.add("conscience");
         listOfWords.add("handkerchief");
+        listOfWords.add("basically");
+        listOfWords.add("dilemma");
+        listOfWords.add("Portuguese");
+        listOfWords.add("unfortunately");
+        listOfWords.add("Neanderthal");
     }
 
     public ArrayList<String> getList(){
