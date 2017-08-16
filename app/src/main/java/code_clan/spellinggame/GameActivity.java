@@ -48,11 +48,7 @@ public class GameActivity extends AppCompatActivity {
 
         this.typeRandomWord = wordsCollection.randomWord();
         randomWord.setText(this.typeRandomWord);
-//        randomWord.postDelayed(new Runnable() {
-//            public void run() {
-//                randomWord.setVisibility(View.INVISIBLE);
-//            }
-//        }, 5000);
+
         showViewDelayed(randomWord);
         counterCorrect.setText("Correctly spelled words: 0");
         counterIncorrect.setText("Incorrectly Spelled words: 0");
@@ -110,6 +106,11 @@ public class GameActivity extends AppCompatActivity {
         counterCorrect.setText("Correctly spelled words: " + Integer.toString(countCorrect)+ "\n");
         counterIncorrect.setText("Incorrectly Spelled words: " + Integer.toString(countIncorrect));
         Toast.makeText(this, result, Toast.LENGTH_SHORT).show();
+    }
+
+    public void onButtonClickhint(){
+        showViewDelayed(randomWord);
+
     }
 
 }
