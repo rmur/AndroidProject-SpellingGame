@@ -20,7 +20,8 @@
         android:layout_marginLeft="8dp"
         android:layout_marginBottom="8dp"
         android:layout_marginTop="8dp"
-        app:layout_constraintHorizontal_bias="0.23" />
+        app:layout_constraintHorizontal_bias="0.23"
+        app:layout_constraintVertical_bias="0.772" />
 
     <Button
         android:id="@+id/summary_button"
@@ -34,5 +35,21 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toRightOf="@+id/toGame_button"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.772"
+        app:layout_constraintHorizontal_bias="0.483" />
+
+    <TextView
+        android:id="@+id/description_view"
+        android:layout_width="250dp"
+        android:layout_height="81dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="98dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.441" />
 </android.support.constraint.ConstraintLayout>

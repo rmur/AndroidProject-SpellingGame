@@ -13,10 +13,10 @@ public class WordsCollection {
 
     public WordsCollection(){
         listOfWords = new ArrayList<String>();
-        listOfWords.add("Helicopter");
-        listOfWords.add("Bicycle");
-        listOfWords.add("Mountain");
-        listOfWords.add("Gentelman");
+        listOfWords.add("convalesce");
+        listOfWords.add("embarrass");
+        listOfWords.add("conscience");
+        listOfWords.add("handkerchief");
     }
 
     public ArrayList<String> getList(){
