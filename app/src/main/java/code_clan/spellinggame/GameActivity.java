@@ -16,6 +16,7 @@ import java.util.concurrent.RunnableFuture;
 public class GameActivity extends AppCompatActivity {
     Button gamebButton;
     Button returnButton;
+    Button hintButton;
 
     TextView randomWord;
     TextView counterCorrect;
@@ -37,6 +38,7 @@ public class GameActivity extends AppCompatActivity {
 
         gamebButton = (Button)findViewById(R.id.toGame_button);
         returnButton = (Button)findViewById(R.id.return_button);
+        hintButton = (Button)findViewById(R.id.hint_button);
 
         typedWord = (EditText)findViewById(R.id.typed_word);
 
@@ -49,7 +51,7 @@ public class GameActivity extends AppCompatActivity {
         this.typeRandomWord = wordsCollection.randomWord();
         randomWord.setText(this.typeRandomWord);
 
-        showViewDelayed(randomWord);
+        showViewDelayed(randomWord, 3000);
         counterCorrect.setText("Correctly spelled words: 0");
         counterIncorrect.setText("Incorrectly Spelled words: 0");
 
@@ -62,16 +64,16 @@ public class GameActivity extends AppCompatActivity {
 
 
     }
-
-    public void showViewDelayed(View view){
+    //Hide word
+    public void showViewDelayed(View view, int time){
         final View delayedView = view;
         view.postDelayed(new Runnable() {
             public void run(){
                 delayedView.setVisibility(View.INVISIBLE);
             }
-        },5000);
+        },time);
     }
-
+    //Show word
     public void showView(View view,int visibility){
         final View delayedView = view;
         view.postDelayed(new Runnable() {
@@ -80,12 +82,12 @@ public class GameActivity extends AppCompatActivity {
             }
         },visibility);
     }
-
+    //MainMenu
     public void returnToMainMenu(){
         Intent intent = new Intent(this, MainMenu.class);
         startActivity(intent);
     }
-
+    //Game
     public void onButtonCLickCompare(View view) {
         String word = typedWord.getText().toString();
 
@@ -97,7 +99,7 @@ public class GameActivity extends AppCompatActivity {
             wordsCollection.listOfWords.remove(this.typeRandomWord);
             this.typeRandomWord = wordsCollection.randomWord();
             randomWord.setText(this.typeRandomWord);
-            showViewDelayed(randomWord);
+            showViewDelayed(randomWord, 3000);
             typedWord.setText("");
             countCorrect ++;
         }
@@ -107,9 +109,10 @@ public class GameActivity extends AppCompatActivity {
         counterIncorrect.setText("Incorrectly Spelled words: " + Integer.toString(countIncorrect));
         Toast.makeText(this, result, Toast.LENGTH_SHORT).show();
     }
-
-    public void onButtonClickhint(){
-        showViewDelayed(randomWord);
+    //Hint
+    public void onButtonClickhint(View view){
+        showView(randomWord, 100);
+        showViewDelayed(randomWord, 1000);
 
     }
 
