@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="code_clan.spellinggame.Summary">
+    tools:context="code_clan.spellinggame.SummaryActivity"
+    android:background="@drawable/summary_list">
 
     <ListView
         android:id="@+id/summary_list"
