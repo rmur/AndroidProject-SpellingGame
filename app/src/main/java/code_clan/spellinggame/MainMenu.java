@@ -22,7 +22,7 @@ public class MainMenu extends AppCompatActivity {
         seeSummary =(Button)findViewById(R.id.summary_button);
         description = (TextView)findViewById(R.id.description_view);
 
-        description.setText("Hello and welcome to the Spelling game!");
+        description.setText(" Hello and welcome to the \n Spelling game!");
 
 
         goToGame.setOnClickListener(new View.OnClickListener() {
