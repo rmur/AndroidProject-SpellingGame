@@ -11,6 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.concurrent.RunnableFuture;
 
 public class GameActivity extends AppCompatActivity {
     Button gamebButton;
@@ -47,6 +48,12 @@ public class GameActivity extends AppCompatActivity {
 
         this.typeRandomWord = wordsCollection.randomWord();
         randomWord.setText(this.typeRandomWord);
+//        randomWord.postDelayed(new Runnable() {
+//            public void run() {
+//                randomWord.setVisibility(View.INVISIBLE);
+//            }
+//        }, 5000);
+        showViewDelayed(randomWord);
         counterCorrect.setText("Correctly spelled words: 0");
         counterIncorrect.setText("Incorrectly Spelled words: 0");
 
@@ -58,6 +65,24 @@ public class GameActivity extends AppCompatActivity {
         });
 
 
+    }
+
+    public void showViewDelayed(View view){
+        final View delayedView = view;
+        view.postDelayed(new Runnable() {
+            public void run(){
+                delayedView.setVisibility(View.INVISIBLE);
+            }
+        },5000);
+    }
+
+    public void showView(View view,int visibility){
+        final View delayedView = view;
+        view.postDelayed(new Runnable() {
+            public void run(){
+                delayedView.setVisibility(View.VISIBLE);
+            }
+        },visibility);
     }
 
     public void returnToMainMenu(){
@@ -72,20 +97,15 @@ public class GameActivity extends AppCompatActivity {
         Game newGame = new Game(word, this.typeRandomWord);
         String result = newGame.checkOfInput();
         if (result.equals("Well done!")) {
+            showView(randomWord, 100);
             wordsCollection.listOfWords.remove(this.typeRandomWord);
             this.typeRandomWord = wordsCollection.randomWord();
             randomWord.setText(this.typeRandomWord);
+            showViewDelayed(randomWord);
             typedWord.setText("");
             countCorrect ++;
-
-
-
         }
-        else {
-            countIncorrect ++;
-
-        }
-
+        else {countIncorrect ++;}
 
         counterCorrect.setText("Correctly spelled words: " + Integer.toString(countCorrect)+ "\n");
         counterIncorrect.setText("Incorrectly Spelled words: " + Integer.toString(countIncorrect));
