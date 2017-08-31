@@ -14,8 +14,8 @@ The application represents spelling-game. It has 3 activities which include : Da
 - Dashboard Activity: welcomes to player, allows to check the words to be taught and go to game Activity;
 - List activity : Shows the words to be taught in the view of lists which was built using constructor;
 - Game activity : 
- -- allows to type in the required word;
- -- shows word to be spelled for 5s;
- -- allows to call the word if forgotten ;
- -- submits spelled word;
- -- allows to return to Dashboard Activity;
+ --* allows to type in the required word;
+ --* shows word to be spelled for 5s;
+ --* allows to call the word if forgotten ;
+ --* submits spelled word;
+ --* allows to return to Dashboard Activity;
