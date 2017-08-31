@@ -3,13 +3,13 @@
 > Java, XML
 ### Framework : Android Studio;
 
-***- Scope:
+### - Scope:
 Project was built to consolidate knowledge gained during the second part of the software development course in CodeClan.
 The mini-game application was built using Java and Android Studio framework.
 
-***- Time Spent : 3 days;
+### - Time Spent : 3 days;
 
-*** Description:
+### - Description:
 The application represents spelling-game. It has 3 activities which include : Dashboard , Game & List of Words.
 - Dashboard Activity: welcomes to player, allows to check the words to be taught and go to game Activity;
 - List activity : Shows the words to be taught in the view of lists which was built using constructor;
